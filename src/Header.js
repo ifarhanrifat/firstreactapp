@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Container, Col, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 
 class Header extends Component{
     constructor(props){
@@ -18,8 +19,25 @@ class Header extends Component{
                                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav className="mr-auto">
-                                        <Nav.Link href="#home">Home</Nav.Link>
-                                        <Nav.Link href="#link">Link</Nav.Link>
+                                        <NavLink
+                                            exact
+                                            activeStyle={{
+                                                textDecoration: 'Underline'
+                                            }}
+                                            activeClass='active'
+                                            to='/'
+                                            >
+                                            Home
+                                        </NavLink>
+                                        <NavLink
+                                            activeStyle={{
+                                                textDecoration: 'Underline'
+                                            }}
+                                            activeClass='active'
+                                            to='/about'
+                                        >
+                                            About
+                                        </NavLink>
                                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
